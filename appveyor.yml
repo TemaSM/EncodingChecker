@@ -1,6 +1,6 @@
 version: 2.0.{build}
 image: Visual Studio 2019
-configuration: Release
+configuration: Debug
 platform: Any CPU
 build:
   project: sources/EncodingChecker.sln
@@ -10,7 +10,7 @@ before_build:
   - nuget restore sources/EncodingChecker.sln
 
 after_build:
-  - 7z a EncodingChecker.zip %APPVEYOR_BUILD_FOLDER%/sources/EncodingChecker/bin/Release/*
+  - 7z a EncodingChecker.zip %APPVEYOR_BUILD_FOLDER%/sources/EncodingChecker/bin/Debug/*
 
 artifacts:
   - path: EncodingChecker.zip
